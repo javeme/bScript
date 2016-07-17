@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{a5064db6-5dd3-494c-aa79-90a795c132d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\native">
+      <UniqueIdentifier>{ed86ea8e-a229-4708-bc0e-b07251fdb883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\script">
+      <UniqueIdentifier>{e96ec649-9f2a-42ae-93d2-b7f91fabad15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\type">
+      <UniqueIdentifier>{73981924-7c6d-4888-b67c-4a379d4fb544}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\util">
+      <UniqueIdentifier>{0ba6c27a-63d9-4027-97c1-73bd713de401}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\script\instruction">
+      <UniqueIdentifier>{4cf49a81-08ab-43d6-b493-674d5d8a1498}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\blib">
+      <UniqueIdentifier>{05dfc49c-95b9-4d9a-8a79-92ffee945cdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\runtime">
+      <UniqueIdentifier>{b2dda5ad-45d7-458d-af5d-2abbfb06206b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\script\instruction\stmt">
+      <UniqueIdentifier>{24dfc05d-3e47-4245-9b3d-7561c262b9ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\script\instruction\method">
+      <UniqueIdentifier>{f72c92e8-b122-4351-b5ad-17bac248ae99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\script\instruction\expr">
+      <UniqueIdentifier>{fed16511-7c16-43b0-a80c-16f78232968c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\script\interpreter">
+      <UniqueIdentifier>{85264667-3003-4732-903f-b336cfd932d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\script\parser">
+      <UniqueIdentifier>{d944f8ec-5169-4f0a-a650-7f643292b56b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\oo">
+      <UniqueIdentifier>{e7b0ecf1-ad96-4c56-8082-82cc5b894580}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\type\Number.h">
+      <Filter>src\type</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\Instruction.h">
+      <Filter>src\script\instruction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\InstructionVisitor.h">
+      <Filter>src\script\instruction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\LanguageNode.h">
+      <Filter>src\script\instruction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\BSContext.h">
+      <Filter>src\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\Executeable.h">
+      <Filter>src\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\Field.h">
+      <Filter>src\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\Function.h">
+      <Filter>src\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\OpValueType.h">
+      <Filter>src\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\BScriptUtil.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\AccurateTimeTicker.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Application.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ArrayList.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\BeanContainer.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\bluemeiLib.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\BString.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ByteBuffer.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\CallStackUtil.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Class.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ClassNotFoundException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ClientSocket.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\CodeUtil.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Context.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\CriticalLock.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\DataBuffer.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Date.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ErrorHandler.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Exception.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\File.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\FtpConnection.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\FtpException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\HashCoder.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\HashMap.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\IOCompletionPort.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\IOCompletionPortImpl.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\IOCompletionPortImplLinux.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\IOCompletionPortImplWin32.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\IOCPEvent.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\IOCPException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\IOCPModel.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\IOException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Iterator.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\KVPairTree.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\LambdaThread.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\LinkedList.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Log.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\MemoryPool.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\MultiValueHashMap.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\NotFoundException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\NullPointerException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Object.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ObjectFactory.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Observer.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\OutOfBoundException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\OutOfMemoryException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Pair.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ReferencePointer.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ResourceLock.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Runnable.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\RuntimeException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ServerSocket.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Session.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\SmartPtr.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\SmartPtrManager.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\SocketException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\SocketTools.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\SortArray.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\StackWalker.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\StringBuilder.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\System.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Task.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Thread.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ThreadException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ThreadParameter.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\ThreadPool.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\TimeoutException.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Timer.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\TypeManager.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\Util.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bLib\WorkThread.h">
+      <Filter>src\blib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\native\NativeClass.h">
+      <Filter>src\native</Filter>
+    </ClInclude>
+    <ClInclude Include="src\native\NativeFunction.h">
+      <Filter>src\native</Filter>
+    </ClInclude>
+    <ClInclude Include="src\native\NativeObject.h">
+      <Filter>src\native</Filter>
+    </ClInclude>
+    <ClInclude Include="src\native\NativeObjectGroup.h">
+      <Filter>src\native</Filter>
+    </ClInclude>
+    <ClInclude Include="src\native\FunctorManager.h">
+      <Filter>src\native</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckMemLeaks.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\method\Method.h">
+      <Filter>src\script\instruction\method</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\stmt\Statment.h">
+      <Filter>src\script\instruction\stmt</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\stmt\StatmentVisitor.h">
+      <Filter>src\script\instruction\stmt</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\stmt\SequenceStatment.h">
+      <Filter>src\script\instruction\stmt</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\stmt\SimpleStatment.h">
+      <Filter>src\script\instruction\stmt</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\expr\Expression.h">
+      <Filter>src\script\instruction\expr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\expr\ExpressionVisitor.h">
+      <Filter>src\script\instruction\expr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\expr\Operand.h">
+      <Filter>src\script\instruction\expr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\instruction\expr\Operator.h">
+      <Filter>src\script\instruction\expr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\interpreter\BScript.h">
+      <Filter>src\script\interpreter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\interpreter\EvaluateContext.h">
+      <Filter>src\script\interpreter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\interpreter\EvaluateVisitor.h">
+      <Filter>src\script\interpreter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\interpreter\StackFrame.h">
+      <Filter>src\script\interpreter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\interpreter\StandardEvaluateVisitor.h">
+      <Filter>src\script\interpreter</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bScript.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\script\instruction\test.cpp">
+      <Filter>src\script\instruction</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bLib\DataBuffer.cpp">
+      <Filter>src\blib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bLib\KVPairTree.cpp">
+      <Filter>src\blib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bLib\LinkedList.cpp">
+      <Filter>src\blib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bLib\MemoryPool.cpp">
+      <Filter>src\blib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\NativeClass.cpp">
+      <Filter>src\native</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\NativeObject.cpp">
+      <Filter>src\native</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\NativeObjectGroup.cpp">
+      <Filter>src\native</Filter>
+    </ClCompile>
+    <ClCompile Include="src\native\FunctorManager.cpp">
+      <Filter>src\native</Filter>
+    </ClCompile>
+    <ClCompile Include="src\script\instruction\method\Method.cpp">
+      <Filter>src\script\instruction\method</Filter>
+    </ClCompile>
+    <ClCompile Include="src\script\interpreter\StackFrame.cpp">
+      <Filter>src\script\interpreter</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

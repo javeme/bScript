@@ -1,0 +1,169 @@
+enum OpValueType{OPT_UNKNOWN,OPT_VOID,INT1,INT2,INT4,LONG8,FLOAT4,DOUBLE8,LONG_DOUBLE16,PTR4,};
+typedef enum CallType{
+	stdCall,
+	cdeclCall,
+	fastCall,
+	thisCall,
+	nakedCall,
+}call_type_t;
+class NativeFunction;
+class FunctorManager : public Object
+{
+public:
+	void addFunctor(SmartPtr<NativeFunction> pFun)
+	{
+		if(pFun!=nullptr)
+			m_functorMap.insert(make_pair(pFun->getName(),pFun));
+	}
+	void removeFunctorByName(const String& name)
+	{
+		auto itor=m_functorMap.find(name);
+		if(itor!=m_functorMap.end())
+		{
+			m_functorMap.erase(itor);
+		}
+	}
+	SmartPtr<NativeFunction> findFunctorByName(const String& name)
+	{
+		auto itor=m_functorMap.find(name);
+		if(itor!=m_functorMap.end())
+		{
+			return itor->second;
+		}
+		return nullptr;
+	}
+protected:
+	Map<String,SmartPtr<NativeFunction>> m_functorMap;
+};
+class JSContext : public Object
+{
+public:
+	static JSContext* getInstance()
+	{
+		static JSContext ctx;
+		return &ctx;
+	}
+protected:
+	JSContext()
+	{
+		m_pFunctorManager=new FunctorManager();
+	}
+public:
+	SmartPtr<FunctorManager> getFunctorManager()
+	{
+		return m_pFunctorManager;
+	}
+protected:
+	SmartPtr<FunctorManager> m_pFunctorManager;
+};
+class FunctorRegister : public Object
+{
+public:
+	FunctorRegister(cstring name,void*p,const type_info& info)
+	{
+		//m_strFunName=name;
+		//m_pFun=p;
+		SmartPtr<NativeFunction> pFun=new NativeFunction(name,p);
+		
+		String strFunInfo=info.name();//void __cdecl(class String,int)
+		String strTmp;
+		int start=0,end=0;
+		//返回类型
+		strFunInfo=strFunInfo.trim();
+		end=strFunInfo.find(" ",start);
+		strTmp=strFunInfo.substring(start,end-start);
+		//m_returnType=parseType(strTmp);
+		pFun->setReturnType(parseType(strTmp));
+		//调用方式
+		start=end+1;
+		end=strFunInfo.find("(",start);
+		strTmp=strFunInfo.substring(start,end-start);
+		//m_callType=parseCallType(strTmp);
+		pFun->setCallType(parseCallType(strTmp));
+		//参数类型
+		while(true)
+		{
+			start=end+1;
+			end=strFunInfo.find(",",start);
+			if(end>0)
+			{
+				strTmp=strFunInfo.substring(start,end-start);
+				//m_paraTypes.push_back(parseType(strTmp));
+				pFun->addParaType(parseType(strTmp));
+			}
+			else
+			{
+				strTmp=strFunInfo.substring(start,strFunInfo.length()-start-1);
+				//m_paraTypes.push_back(parseType(strTmp));
+				pFun->addParaType(parseType(strTmp));
+				break;
+			}
+		}
+
+		JSContext* pContext=JSContext::getInstance();
+		auto pManager=pContext->getFunctorManager();
+		pManager->addFunctor(pFun);
+	}
+public:
+	static OpValueType parseType(String str)
+	{
+		OpValueType t=OpValueType::OPT_UNKNOWN;
+
+		if(str.contain("&") || str.contain("*"))
+		{
+			t=OpValueType::PTR4;
+		}
+		else if(str.contain("class"))//class String
+		{
+			throwpe(Exception("Not supported. Please pass the object by reference or pointer."));
+		}
+		else 
+		{
+			if(str.contain("void"))
+				t=OpValueType::OPT_VOID;
+			else if(str.contain("short") || str.contain("wchar_t"))
+				t=OpValueType::INT2;
+			else if(str.contain("char") || str.contain("bool") || str.contain("byte"))
+				t=OpValueType::INT1;
+			else if(str.contain("__int64"))
+				t=OpValueType::LONG8;
+			else if(str.contain("long double"))
+				t=OpValueType::LONG_DOUBLE16;
+			else if(str.contain("int") || str.contain("long"))
+				t=OpValueType::INT4;
+			else if(str.contain("float"))
+				t=OpValueType::FLOAT4;
+			else if(str.contain("double"))
+				t=OpValueType::DOUBLE8;
+		}
+
+		return t;
+	}
+	static CallType parseCallType(String str)
+	{
+		CallType t=cdeclCall;
+		if(str.contain("__cdecl"))
+			t=cdeclCall;
+		else if(str.contain("__stdcall"))
+			t=stdCall;
+		else if(str.contain("__fastcall"))
+			t=fastCall;
+		else if(str.contain("__thiscall"))
+			t=thisCall;
+		else if(str.contain("__nakedcall"))
+			t=nakedCall;
+		
+		return t;
+	}
+/*
+protected:
+	String m_strFunName;
+	void* m_pFun;
+	OpValueType m_returnType;
+	List<OpValueType> m_paraTypes;
+	CallType m_callType;*/
+};
+
+#define functor(func) \
+	/*void * p=func;decltype(func)*/\
+	static FunctorRegister functor_##func(CODE2STRING(func),func,typeid(func));

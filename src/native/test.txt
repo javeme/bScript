@@ -1,0 +1,8 @@
+
+
+void fun(String& str,short i0,int i1,long i2,long long i3,double df,long double ldf,
+	WCHAR c,cstring s,char* s2,byte t,bool b,String* p){
+	TRACE("function.%s..............\n",str.c_str());
+}
+
+functor(fun)
